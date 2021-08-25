@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-myip=$(44.195.89.163)
 class  App extends React.Component {
   constructor(props){
     super(props);
@@ -13,7 +12,7 @@ class  App extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get("http://myip$:8080/api/")
+    axios.get("http://44.195.89.163:8080/api/")
     .then((res)=>{
       this.setState({
         users:res.data,
@@ -28,7 +27,7 @@ class  App extends React.Component {
     console.log(id)
     evenet.preventDefault();
     if(id===0){
-      axios.post("http://myip$:8080/api/",{
+      axios.post("http://44.195.89.163:8080/api/",{
         name:this.state.name,
         email:this.state.email,
         password:this.state.password
@@ -36,7 +35,7 @@ class  App extends React.Component {
         this.componentDidMount();
       })
     }else{
-      axios.put("http://myip$:8080/api/",{
+      axios.put("http://44.195.89.163:8080/api/",{
         id:id,
         name:this.state.name,
         email:this.state.email,
@@ -47,13 +46,13 @@ class  App extends React.Component {
     }
   }
   delete(id){
-    axios.delete("http://myip$:8080/api/"+id)
+    axios.delete("http://44.195.89.163:8080/api/"+id)
     .then(()=>{
       this.componentDidMount();
     })
   }
   edit(id){
-    axios.get("http://myip$:8080/api/"+id)
+    axios.get("http://44.195.89.163:8080/api/"+id)
     .then((res)=>{
       this.setState({
         id:res.data.id,
