@@ -1,5 +1,5 @@
-FROM node:10-alpine as build-
-RUN  apt update && apt npm install
+FROM node:alpine
+#RUN  apt update && apt npm install
 RUN mkdir /app
 WORKDIR /app
 COPY package.json /app
