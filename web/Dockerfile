@@ -1,5 +1,4 @@
 FROM  java:8
-RUN apt update
 RUN mkdir /build
 WORKDIR /build
 COPY pom.xml /build
