@@ -1,4 +1,6 @@
-FROM  java:8
+FROM sgrio/java-oracle
+RUN apt-get update
+RUN apt-get install -y maven
 RUN mkdir /build
 WORKDIR /build
 COPY pom.xml /build
