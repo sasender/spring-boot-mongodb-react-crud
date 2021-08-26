@@ -1,4 +1,4 @@
-FROM 3-openjdk-8-slim
+FROM maven
 #RUN apt-get update
 RUN mkdir /build
 WORKDIR /build
@@ -8,7 +8,7 @@ COPY mvnw /build
 COPY mvnw.cmd /build
 #RUN apt install maven
 #RUN mvn dependency:go-offline -B
-#RUN mvn package
+RUN mvn package
 #COPY target /build/target
 EXPOSE 8080
 CMD [ "mvn spring-boot:run"]
