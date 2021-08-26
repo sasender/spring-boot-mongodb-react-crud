@@ -1,6 +1,6 @@
 FROM maven:3.5.2-jdk-8-alpine 
 COPY pom.xml /build/
-RUN mvn  install
+RUN  mvn install /build/
 COPY src /build/src/
 COPY mvnw /build/
 COPY mvnw.cmd /build/ 
