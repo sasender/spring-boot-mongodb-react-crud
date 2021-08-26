@@ -1,4 +1,4 @@
-FROM sgrio/java-oracle
+FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install -y maven
 RUN mkdir /build
