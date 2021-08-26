@@ -4,7 +4,7 @@ COPY pom.xml /build/
 COPY src /build/src/
 COPY mvnw /build/
 COPY mvnw.cmd /build/ 
-COPY target /build/target
+#COPY target /build/target
 WORKDIR /build/
 EXPOSE 8080
 CMD [ "mvn spring-boot:run"]
