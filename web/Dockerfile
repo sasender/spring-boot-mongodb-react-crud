@@ -1,4 +1,4 @@
-FROM FROM openjdk:8-jdk-slim
+FROM openjdk:8-jdk-slim
 RUN apt-get update
 RUN mkdir /build
 WORKDIR /build
