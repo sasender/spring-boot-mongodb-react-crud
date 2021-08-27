@@ -22,7 +22,7 @@ services:
     build: ./app
     container_name: ui_server
     command: sh -c "
-        npm start"
+        npm && start"
     ports:
       - 3000:3000
     links:
