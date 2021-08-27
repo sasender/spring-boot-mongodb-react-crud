@@ -21,6 +21,7 @@ services:
   frontend:
     build: ./app
     container_name: ui_server
+    stdin_open: true
     command: sh -c "
         npm start"
     ports:
