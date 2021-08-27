@@ -14,7 +14,7 @@ services:
     ports: 
       - 8080:8080
     links:
-      - mongo  
+      - mongodb 
 
   frontend:
     build: ./app
@@ -22,7 +22,7 @@ services:
     ports:
       - 3000:3000
     links:
-      - ui_web
+      - web
 volumes:
   scrum-data:      
 
