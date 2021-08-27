@@ -11,6 +11,8 @@ services:
   web:
     build: ./web
     container_name: ui_web
+    command: bash -c "
+        mvn spring-boot:run"
     ports: 
       - 8080:8080
     links:
@@ -19,6 +21,8 @@ services:
   frontend:
     build: ./app
     container_name: ui_server
+    command: bash -c "
+        npm start"
     ports:
       - 3000:3000
     links:
