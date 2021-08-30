@@ -1,52 +1,20 @@
-version: "3"
+version: "3.9"
 services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongo_container
-    volumes:
-      - mongodb-data:/data/db
-    ports:
-      - 27019:27017
-    restart: always  
-    networks:
-      - mern-app  
-
-  web:
-    build: ./web
-    container_name: ui_web
-    command: bash -c "
-        mvn spring-boot:run"
-    ports: 
-      - 8080:8080
-    environment:
-      - MONGO_URL=mongodb://mongodb:27017/mongo_container 
-    networks:
-      - mern-app   
-    depends_on:
-      - mongodb 
-
   frontend:
-    build: ./app
-    container_name: ui_server
+    image: sasender/app:v2
+    container_name: react
     stdin_open: true
-    command: sh -c "
-        npm start"
     ports:
-      - 3000:3000
-    environment:
-      - MONGO_URL=mongodb://mongodb:27017/mongo_container
-    networks:
-      - mern-app   
-    depends_on:
-      - web
-networks: 
-  mern-app:
-    driver: bridge      
-volumes:
-  mongodb-data:
-    driver: local      
+      - "3000:3000"
 
+  springboot:
+    image: sasender/web:v3
+    container_name: springboot
+    ports:
+    - "8080:8080"
 
-       
-
-   
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+    - "27019:27017"
