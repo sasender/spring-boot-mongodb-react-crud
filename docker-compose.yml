@@ -4,9 +4,11 @@ services:
     image: mongo:latest
     container_name: mongo_container
     volumes:
-      - 'mongo:/data/db'
+      - root/mongodb-data:/data/db
     ports:
       - 27019:27017
+    networks:
+      - mern-app  
 
   web:
     build: ./web
@@ -15,7 +17,9 @@ services:
         mvn spring-boot:run"
     ports: 
       - 8080:8080
-    links:
+    networks:
+      - mern-app   
+    depends_on:
       - mongodb 
 
   frontend:
@@ -26,10 +30,16 @@ services:
         npm start"
     ports:
       - 3000:3000
-    links:
+    networks:
+      - mern-app   
+    depends_on:
       - web
+networks: 
+  mern-app:
+  driver: bridge      
 volumes:
-  scrum-data:      
+  scrum-data:
+    driver: local      
 
 
        
