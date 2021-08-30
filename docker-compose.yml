@@ -1,6 +1,6 @@
 version: "3"
 services:
-  db:
+  mongodb:
     image: mongo:latest
     container_name: mongo_container
     volumes:
@@ -21,7 +21,7 @@ services:
     networks:
       - mern-app   
     depends_on:
-      - db 
+      - mongodb 
 
   frontend:
     build: ./app
