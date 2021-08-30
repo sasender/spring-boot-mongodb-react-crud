@@ -36,7 +36,8 @@ services:
       - web
 networks: 
   mern-app:
-  driver: bridge      
+  driver:
+    bridge      
 volumes:
   scrum-data:
     driver: local      
