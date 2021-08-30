@@ -3,6 +3,9 @@ services:
   frontend:
     image: sasender/app:v2
     container_name: react
+    command: sh -c "
+        npm start"
+        
     stdin_open: true
     ports:
       - "3000:3000"
