@@ -25,4 +25,4 @@ services:
     image: docker.io/bitnami/mongodb:4.4
     container_name: mongodb
     ports:
-      - "27019:27017"
+      - "27017:27017"
