@@ -10,7 +10,7 @@ services:
     ports:
       - "3000:3000"
     links:
-      - mongo 
+      - mongodb
   springboot:
     image: sasender/web:v3
     container_name: springboot
@@ -22,7 +22,7 @@ services:
       - mongodb
 
   mongodb:
-    image: mongo
+    image: docker.io/bitnami/mongodb:4.4
     container_name: mongodb
     ports:
       - "27019:27017"
