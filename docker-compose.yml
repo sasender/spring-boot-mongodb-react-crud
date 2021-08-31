@@ -9,17 +9,20 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
-
+    links:
+      - mongo 
   springboot:
     image: sasender/web:v3
     container_name: springboot
     command: bash -c "
         mvn spring-boot:run"
     ports:
-    - "8080:8080"
+      - "8080:8080"
+    links:
+      - mongodb
 
   mongodb:
     image: mongo
     container_name: mongodb
     ports:
-    - "27019:27017"
+      - "27019:27017"
