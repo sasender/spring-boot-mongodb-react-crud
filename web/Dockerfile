@@ -5,7 +5,7 @@ RUN mkdir /build
 WORKDIR /build
 COPY pom.xml /build
 COPY src /build/src
-COPY mvnw /build
+#COPY mvnw /build
 RUN apt install maven
 #RUN mvn dependency:go-offline -B
 RUN mvn package
