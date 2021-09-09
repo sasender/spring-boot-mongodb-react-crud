@@ -3,10 +3,6 @@ pipeline {
     environment {
 		myrepo='spring-boot-mongodb-react-crud/web/'
     }
-    
-    tools  {
-		maven 'm3.6'
-	}
 
     stages {
         stage ('build') {
