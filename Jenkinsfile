@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    node {
+        label '' MAVEN
+	}
     environment {
 		myrepo='spring-boot-mongodb-react-crud/web/'
     }
