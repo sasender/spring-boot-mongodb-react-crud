@@ -10,7 +10,10 @@ pipeline {
 
     stages {
         stage ('build') {
-            sh "mvn clean package -f $myrepo/pom.xml"
+			steps {
+                sh "mvn clean package -f $myrepo/pom.xml"
+			}
+            
         }
 
         stage ('testresults'){
